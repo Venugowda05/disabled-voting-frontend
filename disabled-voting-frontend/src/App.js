@@ -10,7 +10,8 @@ function App() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post(\`\${API_BASE}/register\`, voter);
+      const res = await axios.post(`${API_BASE}/vote`, vote)
+
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.detail || "Error");
